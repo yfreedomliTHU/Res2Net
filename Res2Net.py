@@ -40,7 +40,7 @@ class Res2Net(nn.Module):
         out = torch.cat([y1, features], dim = 1)
         conv1_out1 = self.conv1(out)
         result = features_in + conv1_out1
-        return conv1_out1
+        return result
 
 if __name__ == "__main__":
     res2net = Res2Net(64,1,4,1,1)

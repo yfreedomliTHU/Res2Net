@@ -5,7 +5,7 @@ import torch.nn as nn
 import os
 from torch.autograd import Variable
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "2"
+#os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 
 class Res2Net(nn.Module):
     def __init__(self, features_size, stride_ = 1, scale = 4, padding_ = 1, groups_ = 1):
@@ -26,8 +26,8 @@ class Res2Net(nn.Module):
 
 
     def forward(self, x):
-        features = x
-        conv1_out = self.conv1(features)
+        features_in = x
+        conv1_out = self.conv1(features_in)
         y1 = conv1_out[:,0:self.divided_features,:,:]
         fea = self.conv2(conv1_out[:,self.divided_features:2*self.divided_features,:,:])
         features = fea
@@ -38,7 +38,9 @@ class Res2Net(nn.Module):
             features = torch.cat([features, fea], dim = 1)
 
         out = torch.cat([y1, features], dim = 1)
-        return out
+        conv1_out1 = self.conv1(out)
+        result = features_in + conv1_out1
+        return conv1_out1
 
 if __name__ == "__main__":
     res2net = Res2Net(64,1,4,1,1)

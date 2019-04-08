@@ -8,6 +8,6 @@ Link:https://arxiv.org/abs/1904.01169
 
 *This code is implemented by the description and structure diagram in the paper.*
 
-**The structure of Res2Net**
+***The structure of Res2Net***
 
 ![image](https://github.com/yfreedomliTHU/Res2Net/blob/master/image/res2net.PNG)

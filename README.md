@@ -1,4 +1,7 @@
 # Res2Net
+![Stars](https://img.shields.io/github/stars/yfreedomliTHU/Res2Net)
+![Forks](https://img.shields.io/github/forks/yfreedomliTHU/Res2Net)
+
 **Maybe a simple implementation of Res2Net via Pytorch**
 
 **Res2Net: A New Multi-scale Backbone Architecture(CVPR2019)**
